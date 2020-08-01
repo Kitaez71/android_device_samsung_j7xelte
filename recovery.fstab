@@ -1,0 +1,36 @@
+#device			fstype		mount point																									[device2] [length=]
+/bota0			emmc		/dev/block/platform/13500000.dwmmc0/by-name/BOTA0
+/bota1			emmc		/dev/block/platform/13500000.dwmmc0/by-name/BOTA1
+/na				emmc		/dev/block/platform/13500000.dwmmc0/by-name/NA
+/efs				emmc		/dev/block/platform/13500000.dwmmc0/by-name/EFS						flags=display="EFS";backup=1
+/cpefs			emmc		/dev/block/platform/13500000.dwmmc0/by-name/CPEFS					flags=backup=1;subpartitionof=/efs
+/cm				emmc		/dev/block/platform/13500000.dwmmc0/by-name/CM
+/m9kefs1		emmc		/dev/block/platform/13500000.dwmmc0/by-name/m9kefs1				flags=backup=1;subpartitionof=/efs
+/m9kefs2		emmc		/dev/block/platform/13500000.dwmmc0/by-name/m9kefs2				flags=backup=1;subpartitionof=/efs
+/m9kefs3		emmc		/dev/block/platform/13500000.dwmmc0/by-name/m9kefs3				flags=backup=1;subpartitionof=/efs
+/nad_refer		emmc		/dev/block/platform/13500000.dwmmc0/by-name/NAD_REFER
+/param			emmc		/dev/block/platform/13500000.dwmmc0/by-name/PARAM
+/misc			emmc		/dev/block/platform/13500000.dwmmc0/by-name/MISC
+/boot				emmc		/dev/block/platform/13500000.dwmmc0/by-name/BOOT					flags=backup=1;display="Boot";flashimg=0
+/recovery		emmc		/dev/block/platform/13500000.dwmmc0/by-name/RECOVERY			flags=backup=1;display="Recovery";flashimg=0
+/radio			emmc		/dev/block/platform/13500000.dwmmc0/by-name/RADIO					flags=backup=1;display="Radio firmware";flashimg=0
+/persistent		emmc		/dev/block/platform/13500000.dwmmc0/by-name/PERSISTENT
+/steady			emmc		/dev/block/platform/13500000.dwmmc0/by-name/STEADY
+/reserved2		emmc		/dev/block/platform/13500000.dwmmc0/by-name/RESERVED2
+/system		ext4			/dev/block/platform/13500000.dwmmc0/by-name/SYSTEM				flags=backup=1;display="System";flashimg=0
+/cache			ext4			/dev/block/platform/13500000.dwmmc0/by-name/CACHE
+/hidden			emmc		/dev/block/platform/13500000.dwmmc0/by-name/HIDDEN
+/omr				emmc		/dev/block/platform/13500000.dwmmc0/by-name/OMR
+/cp_debug		emmc		/dev/block/platform/13500000.dwmmc0/by-name/CP_DEBUG
+/nad_fw			emmc		/dev/block/platform/13500000.dwmmc0/by-name/NAD_FW
+/data				ext4			/dev/block/platform/13500000.dwmmc0/by-name/USERDATA			flags=length=-20480;display="Userdata";encryptable=footer;flashimg=0
+
+/external_sd				auto			/dev/block/mmcblk1p1 /dev/block/mmcblk1							flags=display="External_sd";storage;wipeingui;removable
+/usb-otg					auto			/dev/block/sda1 /dev/block/sda											flags=display="USB-OTG";storage;wipeingui;removable
+
+/boot_image				emmc		/dev/block/mmcblk0p12														flags=backup=0;display="Boot Image";flashimg=1
+/recovery_image		emmc		/dev/block/mmcblk0p13														flags=backup=0;display="Recovery Image";flashimg=1
+/system_image			emmc		/dev/block/mmcblk0p19														flags=display="System Image";backup=0;flashimg=1
+/cache_image			emmc		/dev/block/mmcblk0p20														flags=display="Cache Image";backup=0;flashimg=1
+/radio_image				emmc		/dev/block/mmcblk0p15														flags=display="Radio Image";backup=0;flashimg=1
+/hidden_image			emmc		/dev/block/mmcblk0p21														flags=display="Hidden Image";backup=0;flashimg=1
